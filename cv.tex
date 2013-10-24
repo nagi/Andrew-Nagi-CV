@@ -1,0 +1,209 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[utf8]{inputenc}
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+  SmallCapsFont = Fontin-SmallCaps.otf,
+  BoldFont = Fontin-Bold.otf,
+  ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Andrew Nagi with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------------------------------------------
+\par{\centering
+  {\huge \textsc{Andrew Nagi}
+}\bigskip\par}
+%--------------------SECTIONS-----------------------------------
+\section{Personal Data}
+
+\begin{tabular}{rl}
+  \textsc{Place and Date of Birth:} & Hitchin, Hertfordshire  | 02 November 1978 \\
+  \textsc{Address:}   & 19 West View, Letchworth, Hertfordshire, SG6 3QN \\
+  \textsc{Phone:}     & +44 7530 124431\\
+  \textsc{email:}     & \href{mailto:andrew.nagi@gmail.com}{andrew.nagi@gmail.com} \\
+  \textsc{github:}     & \href{https://github.com/nagi}{https://github.com/nagi} \\
+  \textsc{web}     & \href{http://www.nagisystems.com}{http://www.nagisystems.com}
+\end{tabular}
+
+\section{Education}
+\begin{tabular}{rl}	
+  \textsc{February} 2006 & \textsc{Cisco Certified Network Associate}, \textbf{Cisco}\\
+                         & \small\emph{Self study}\\&\\
+  \textsc{February} 2006 & \textsc{Microsoft Certified Systems Engineer}, \textbf{Microsoft}\\
+                         & \small\emph{Self study}\\&\\
+  \textsc{July} 2005 & BSc Honors Degree \textsc{Computer Science}, \textbf{University of Hertfordshite}\\
+                     & \small\emph{Second Class First Division}\\&\\
+\end{tabular}
+
+\section{Selected List of Skills}
+\begin{tabular}{rl}
+  \textsc{Operating Systems:}& Linux, OSx, Microsoft Windows, BSD, Solaris\\
+  \textsc{Primary Languages:}& Ruby, Javascript, CoffeeScript, Shell Script, Java\\
+  \textsc{Secondary Languages:}& C\#, C, Lisp, Eiffel, Assembly (AVR, x86), Python\\
+  %\textsc{%Technologies:}& HTML, CSS, XML, REST, SOAP \\
+  \textsc{Javascript Libraries:} & jQuery, Prototype, Underscore, Backbone\\
+  %\textsc{Servers \& Protocols:} & DHCP, DNS, BOOTP \\
+  \textsc{Ruby Libraries:} & Rails, Rspec, Cucumber, Nokogiri, Sinatra etc.\\
+  \textsc{Deployment \& Ops:} & Nginx, Apache, Heroku, AWS, Passenger, Unicorn, Chef\\
+  %\textsc{Methodologies:} & TDD, BDD, Agile}\\ Tool: & \textsc{Vim, GIT, iTerm\\
+  \textsc{Data \& Storage:} & PostgreSQL, MySQL, MongoDB, SQLite\\
+                   & ...and a few more. Just ask.
+\end{tabular}
+
+\section{Relevant Professional Experience}
+\begin{tabular}{r|p{11.2cm}}
+  \emph{Current} \\
+  \textsc{Jun '12 - now} & Chief Technology Officer at \textsc{My Local Planet}\\
+                         &\emph{A Local News Portal}\\
+                         &\footnotesize{Working with the C.E.O, we've taken \href{www.mylocalplanet.com}{www.mylocalplanet.com}
+  from prototype to launch. The application is composed of two Rails apps, a couple of Sinatra apps
+  and it runs on one Virtual Private Server and one physical server. We have doing less development
+  of late as we experiment with S.E.O in order to drive traffic to the site.}
+  \\\multicolumn{2}{c}{} \\
+  \textsc{Sep '13 - Oct '13} & Freelance Rails Development for \textsc{TownhouseHQ} \\
+                             &\emph{Bespoke Content Management System}\\
+                             &\footnotesize{TownhouseHQ are a digital design agency. They needed my help
+  creating C.R.M \& Blogging app with a few unusual requirements. Built with Ruby on Rails \& the
+  beautifully named “Comfortable Mexican Sofa” gem.}\\
+                             &\emph{Pluggr API}\\
+                             &\footnotesize{ I helped design and implement the API for a video
+  microblogging site due to launch April 2013. }
+\end{tabular}
+\section{Relevant Professional Experience Continued}
+\begin{tabular}{r|p{11.2cm}}
+  \textsc{Dec '12 - Jan '13} & Freelance Rails Development \textsc{PDFem} \\
+                             &\emph{Turns your emails into PDF files}\\
+                             &\footnotesize{This app will take any email you send it, convert it into a PDF
+  file, then put it in your Dropbox. I leveraged a variety of open source projects to build and
+  deliver this very quickly, including: Dovecot, Postfix, mailman Rails, Omniauth, Rspec \&
+  wkhtmltopdf. The client was non technical and couldn't maintain the application, so I ensured the
+  Rails was (I hope) bug free and the mail server component would deliver 100\% uptime.}
+  \\\multicolumn{2}{c}{} \\
+  \textsc{Jun '12 - Jul '12} & Freelance Rails Development \textsc{Bike Share Philly} \\
+                             &\emph{Where do you need a public bike shed?}\\
+                             &\footnotesize{This app was a clone of the official Bike Share Philadelphia
+  app with a few extra features. The client was reluctant to explain why Philly needed two near
+  identical bike sharing apps. Users see a map, and place pins on places they want the City
+  Council to build a pubic bicycle shed. It was built using Shareabouts.}
+  \\\multicolumn{2}{c}{} \\
+  \textsc{Dec '10 - Sep '11} & Rails Developer \textsc{Quipper} \\
+                             &\emph{A Quiz Entry System}\\
+                             &\footnotesize{Quipper focus on educating with quizzes. I wrote the
+  part that allows anyone to enter a Quiz one question at a time. There is also a Backend, an
+  iPhone app and an Android App. I also wrote a service that takes a Quiz (as json), and turns it into
+  a packaged Android app, but must credit the C.T.O who built the prototype of this component. We
+  used a plethora of technologies including Google's App Engine, Heroku \& MongoDB.}
+  \\\multicolumn{2}{c}{} \\
+  \textsc{Oct '10 - Dec '10} & Co-Founder \& Rails Developer \textsc{Tune Into Me} \\
+                             &\emph{Sell music painlessly.}\\
+                             &\footnotesize{Tune Into Me was a site where amateur musicians could create a web
+  page to sell their music very easily. I built it in Rails with Rspec \& Cucumber and it was cloud hosted
+  on Heroku \& S3. The project was abandoned after my partner lost faith in the concept and reneged on
+  our agreement. That space is now filled by bandcamp.com who came to the market late with the same
+  idea, and now have revenues of about \$2.4 million every 30 days.}
+  \\\multicolumn{2}{c}{} \\
+  \textsc{Oct '10 - Jan '11} & Freelance Rails Development \textsc{Timeline Maker} \\
+                             &\emph{A web application to make timeline charts}\\
+                             &\footnotesize{ I was commissioned by a front end developer to make an app for
+  producing timeline charts. We started off with MITs SIMILE Timeline widget for the front end, and a Rails
+  back end. The client pitched in with some CSS \& Javascript once I got the basic funtionality up and
+  running. }
+  \\\multicolumn{2}{c}{} \\
+  \textsc{Mar '10 - Oct '10} & C\# Developer \textsc{Retail Human Factors} \\
+                             &\emph{Discrete Event Simulation - A computer model of a supermarket}\\
+                             &\footnotesize{ Supermarkets spend upwards of \pounds250,000 to try a
+  new technology (like a new way for customers to pay, or a new type of checkout). Many times these
+  new technologies turn out to be not-so-great. We made computer models of a supermarket so we could
+  test new technologies out using that. We can see how the new technology affects queues and profits
+  without having to rip a real store to bits.}
+\end{tabular}
+
+\section{Open Source \& Pet Projects}
+\begin{tabular}{r|p{11.2cm}}
+  \textsc{Rails App} &\textsc{www.programmingfonts.com} \\
+                     &\emph{Evaluate mono spaced fonts}\\
+                     &\footnotesize{A chance to play with CoffeeScript and Compass SASS.}
+  \\\multicolumn{2}{c}{} \\
+  \textsc{Shell Script} &\textsc{Dyn-Dns-Client} \\
+                        &\emph{Client for www.dyn.com/dns sercive}\\
+                        &\footnotesize{An 18 line alternative to the 3000 line script dyn.com recommends.}
+  \\\multicolumn{2}{c}{} \\
+  \textsc{C + Hardware} &\textsc{Geekfit} \\
+                        &\emph{Game controller}\\
+                        &\footnotesize{Spread old fruit machine buttons across the room and get fit whilst gaming.}
+  \\\multicolumn{2}{c}{} \\
+  \textsc{Ruby}         &\textsc{Fishy} \\
+                        &\emph{Feed fishes, whack-a-mole style.}\\
+                        &\footnotesize{A fish feeding game. Requires a Geekfit™ controller.}
+  \\\multicolumn{2}{c}{} \\
+  \textsc{Ruby}         &\textsc{www.PyChess.com} \\
+                        &\emph{Home of the PyChess Project}\\
+                        &\footnotesize{A statically generated website built with Nanoc.}
+  \\\multicolumn{2}{c}{} \\
+  \textsc{C + Hardware} &\textsc{trackball-2-scrollball} \\
+                        &\emph{Turn a trackball into a scrollball}\\
+                        &\footnotesize{An excuse to whip out the soldiering iron and mod my keyboard.
+                          Obsoleted by the two finger scroll feature of my new MacBook.} \\
+\end{tabular}
+\newline
+\newline
+\section{Interests and Activities}
+
+Aside from my interest in tech I also enjoy playing guitar, cycling, tennis, chess, and
+playing piano. I'm barbecue mad, and even have a few during the colder months. \\
+
+\end{document}
